@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
    │   ESC   │    Z    │    X    │    C    │    D    │    V    ││  WIN   ││  MUTE  ││    K    │    M    │    ,    │    .    │    /    │  KC_ENT │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │  layer  │  SHIFT  │  BSPCE  │  CTRL   ││ ALT     │ SPACE   │  LOWER  │  RAISE  │  
+                                 │  ADJUST │  SHIFT  │  BSPCE  │  CTRL   ││ ALT     │ SPACE   │  LOWER  │  RAISE  │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
 
    [_COLEMAK] = LAYOUT_polydactyl(
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                          KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  
     KC_TAB,   KC_A,     KC_R,     KC_S,     KC_T,     KC_G,                          KC_M,     KC_N,     KC_E,     KC_I,     KC_O,     KC_QUOT,
     KC_ESC,   KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,     KC_LWIN,   KC_MUTE,  KC_K,     KC_H,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,
-                                  LOWER,    KC_LSFT,  KC_BSPC,  KC_LCTL,   KC_LALT,  KC_SPC,   LOWER,    RAISE
+                                  ADJUST,   KC_LSFT,  KC_BSPC,  KC_LCTL,   KC_LALT,  KC_SPC,   LOWER,    RAISE
  ),
 
  /*
@@ -124,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
    │    ▼    │    {    │    (    │    _    │    )    │    }    ├─╯                ╰─┤  \ or | │    4    │    5    │    6    │    -    │    '    │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │    ▼    │    [    │         │         │         │    ]    ││   ▼    ││    ▼   ││    &    │    1    │    2    │    3    │    +    │    =    │
+   │    ▼    │    [    │    <    │    ^    │    >    │    ]    ││   ▼    ││    ▼   ││    &    │    1    │    2    │    3    │    +    │    =    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │    ▼    │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,                       KC_GRV,   KC_7,    KC_8,    KC_9,    KC_PAST,
     _______,  KC_LCBR,  KC_LPRN,  KC_UNDS,  KC_RPRN,  KC_RCBR,                       KC_BSLS,  KC_4,    KC_5,    KC_6,    KC_MINS,  KC_0, 
-    _______,  KC_LBRC,   XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_RBRC,  _______,   _______,  KC_AMPR,  KC_1,    KC_2,    KC_3,    KC_PPLS,  KC_EQL, 
+    _______,  KC_LBRC,  KC_LT,    KC_CIRC,  KC_GT,    KC_RBRC,  _______,   _______,  KC_AMPR,  KC_1,    KC_2,    KC_3,    KC_PPLS,  KC_EQL, 
                                   _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______
  ),
  /*
@@ -155,8 +155,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_RAISE] = LAYOUT_polydactyl(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   KC_WH_U,                       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,XXXXXXX,
-    XXXXXXX,  KC_PGDN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_WH_D,                       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______,   _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, 
+    _______,  KC_PGDN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_WH_D,                       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  
+    _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______,   _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______, 
                                   _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______
  ),
  /*
@@ -166,22 +166,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ a d j u s t                                               │
    └───────────────────────────────────────────────────────────┘
              ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │ AUDIO   │ HAPTIC  │ RGB HUE │ RGB MOD │         │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │         │   F7    │   F8    │   F9    │   F14   │   
+             │         │         │         │         │         │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │         │         │         │         │         │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │  RESET  │ DEBUG   │ QWERTY  │ RGB SAT │         │         ├─╯                ╰─┤         │   F4    │   F5    │   F6    │   F12   │   F13   │
+   │         │         │         │         │         │         ├─╯                ╰─┤         │         │         │         │         │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │  MAKE   │ OS SWAP │ COLEMAK │ RGB VAL │         │         ││  MUTE  ││PLY/PSE ││         │   F1    │   F2    │   F3    │   F10   │   F11   │
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │    ▼    │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │    ▼    │  
+                                 │         │         │         │         ││         │         │         │         │  
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
 
    [_ADJUST] = LAYOUT_polydactyl(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              AU_TOGG,   HF_TOGG,  RGB_HUI,  RGB_MOD,  XXXXXXX,                       XXXXXXX,  KC_F7,    KC_F8,    KC_F9,    KC_F14,   
-    QK_BOOT,  DB_TOGG,  COLEMAK,   RGB_SAI,  XXXXXXX,  XXXXXXX,                       XXXXXXX,  KC_F4,    KC_F5,    KC_F6,    KC_F12,   KC_F13,
-    MAKE_H,   OS_SWAP,  COLEMAK,  RGB_VAI,  XXXXXXX,  XXXXXXX,  KC_MUTE,   KC_MPLY,  XXXXXXX,  KC_F1,    KC_F2,    KC_F3,    KC_F10,   KC_F11,
+              KC_INS,  KC_F7,  KC_F8,  KC_F9,  KC_F10,                       _______,  _______,  _______,  _______,  _______,
+    _______,  KC_PSCR,  KC_F4,  KC_F5,  KC_F6,  KC_F11,                       _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  KC_F1,  KC_F2,  KC_F3,  KC_F12,  _______,   KC_MPLY,  _______,  _______,  _______,  _______,  _______,  _______,
                                   _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______
  )
+ 
+ 
+
 
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
@@ -467,13 +470,13 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
             // case 1:
             //     strcpy ( layer_state_str, "BASE QWERTY");
             //     break;
-            case 2:
+            case 1:
                 strcpy ( layer_state_str, "LOWER");
                 break;
-            case 3:
+            case 2:
                 strcpy ( layer_state_str, "RAISE");
                 break;
-            case 4:
+            case 3:
                 strcpy ( layer_state_str, "ADJUST");
                 break;
             default:
@@ -482,8 +485,8 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
       if (dmacro_num < 1) {
           strcpy ( o_text, layer_state_str );
     }
-  //return state;
-    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+    return state;
+    //return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
 
@@ -608,30 +611,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif // HAPTIC_ENABLE
             }
             return false;
-        // case QWERTY:
-        //     if (record->event.pressed) {
-        //         set_single_persistent_default_layer(_QWERTY);
-        //         #ifdef HAPTIC_ENABLE
-        //           DRV_pulse(transition_hum);
-        //         #endif // HAPTIC_ENABLE
-        //     }
-        //     return false;
         case LOWER:
             if (record->event.pressed) {
                 layer_on(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                //update_tri_layer(_LOWER, _RAISE, _ADJUST);
             } else {
                 layer_off(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                //update_tri_layer(_LOWER, _RAISE, _ADJUST);
             }
             return false;
         case RAISE:
             if (record->event.pressed) {
                 layer_on(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                //update_tri_layer(_LOWER, _RAISE, _ADJUST);
             } else {
                 layer_off(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                //update_tri_layer(_LOWER, _RAISE, _ADJUST);
             }
             return false;
         case ADJUST:
